@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import LeaderboardPage from './leaderboard/LeaderboardPage';
+
+const StyledApp = styled.div`
+  color: white;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+`
 
 function App() {
   return (
-    <div className="App">
-      <h1>Text trivia</h1>
-    </div>
+    <StyledApp>
+      <LeaderboardPage />
+    </StyledApp>
   );
 }
 
