@@ -6,8 +6,14 @@ const baseApiUrl = 'https://<<<<<<<<PLACE URL HERE>>>>>>>>';
 
 const endpoints = {
   csrf: () => ['/csrf', 'GET', false],
-  clientLogin: () => ['/login', 'POST', true],
-  clientLogout: () => ['/logout', 'POST', true],
+  clientLogin: () => ['/auth/login', 'POST', true],
+  clientLogout: () => ['/auth/logout', 'POST', true],
+  getGlobalScores: () => ['/score', 'GET', false],
+  getScore: (id) => [`/score/${id}`, 'GET', false],
+  getSelf: () => ['/user/me', 'GET', false],
+  getUser: () => [`/user/${id}`, 'GET', false],
+  createUser: () => ['/user/create', 'POST', true],
+  setUserPhone: () => ['/user/set-phone', 'POST', true]
 };
 
 let serverDisconnected = false;
