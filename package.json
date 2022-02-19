@@ -1,7 +1,7 @@
 {
   "name": "text-trivia-frontend",
   "version": "0.1.0",
-  "homepage": "https://willmw02.github.io/text-trivia-frontend",
+  "homepage": "https://WillMW02.github.io/text-trivia-frontend",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
