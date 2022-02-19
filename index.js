@@ -1,5 +1,9 @@
 setInterval(() => {
-  h1.style.color = hexCodes[Math.floor(Math.random() * hexCodes.length)];
+  r = Math.floor(Math.random() * 256);
+  g = Math.floor(Math.random() * 256);
+  b = Math.floor(Math.random() * 256);
+
+  document.getElementById("header").style.color = ("rgba(" + r + "," + g +"," + b + ",255)");
 }, 100);
 
 setTimeout(() => {
