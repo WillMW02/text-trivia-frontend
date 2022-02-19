@@ -4,11 +4,18 @@
 
 html, body {
 
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     height: 100%;
 }
 
-loading {
+#header-container {
+    background-color: #212121;
+}
 
-    margin: 16px;
-    padding: 16px;
+#loading {
+    padding: 80px;
+}
+
+#loading-icon {
+    height: 120px;
 }
