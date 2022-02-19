@@ -13,9 +13,18 @@ html, body {
 }
 
 #loading {
-    padding: 80px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #loading-icon {
     height: 120px;
+}
+
+#login-form-container {
+
+    height: 100%
 }

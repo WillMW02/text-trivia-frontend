@@ -43,5 +43,6 @@ setTimeout(() => {
     }
 
   document.getElementById("leaderboard-container").innerHTML = html;
+  document.getElementById("loading-container").innerHTML = "";
 
 }, 1000);
