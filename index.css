@@ -1,15 +1,16 @@
-.h1 {
-  color:  green;
-}
-
 html, body {
 
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     height: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 #header-container {
     background-color: #212121;
+    color: red;
 }
 
 #loading {
@@ -22,10 +23,6 @@ html, body {
 
 #loading-icon {
     height: 120px;
-}
-
-#login-form-container {
-    height: 100%;
 }
 
 #settings-form-container {
@@ -42,7 +39,7 @@ html, body {
 #phoneInput,#phoneBtn {
     margin: 1em;
 }
-#deleteBtn {
+.color-button {
     padding: 1em;
     margin: 1em;
 }

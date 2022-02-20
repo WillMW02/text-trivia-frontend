@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="header-container" class="d-flex justify-content-between align-items-center">
-        <h1 id="header">Settings</h1>
+        <h1 id="header">Signup</h1>
         <div id="return-form-container" class="d-flex">
             <form>
                 <div class="d-inline-block">
@@ -20,17 +20,14 @@
 
     <div id="settings-form-container" class="d-flex">
         <form>
+            <input type="text" class="form-control" id="usernameInput" placeholder="Username">
+            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+            <input type="password" class="form-control" id="phoneNumberInput" placeholder="Phone number">
             <div class="d-inline-block">
-                <input type="text" class="form-control" id="phoneInput" placeholder="Phone number">
-            </div>
-            <div class="d-inline-block">
-                <button type="submit" class="btn btn-primary" id="phoneBtn">Link number to account</button>
-            </div>
-            <div class="d-inline-block">
-                <button type="submit" class="btn btn-primary color-button" id="deleteBtn">Delete account</button>
+                <button type="button" class="btn btn-primary color-button" id="signupBtn">Signup</button>
             </div>
         </form>
     </div>
-    <script src="settings.js"></script>
+    <script src="signup.js"></script>
     <script src="client.js"></script>
 </body>
