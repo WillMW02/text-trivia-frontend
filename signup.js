@@ -28,4 +28,14 @@ sf.addEventListener("submit", async function(event) {
   const responseData = await restFetch(...endpoints.createUser(), {}, { username: username, password: password, mobile_no: number});
 
   console.log(responseData);
+
+  if (responseData.ok) {
+
+    alert("User created successfully")
+    window.location.href="./login.html"
+
+  } else {
+
+    alert("Error while creating user");
+  }
 })

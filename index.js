@@ -65,22 +65,21 @@ setTimeout(() => {
 let html;
 
 if (document.cookie.indexOf('jwt=') != -1) {
-  // cookie exists, logged in
+  console.log("cookie exists, logged in")
 
   const userData = await restFetch(...endpoints.getSelf());
   data = userData.data;
 
   html = `
     Logged in as ${data.username}
-    <a href="./login.html">
-      <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
+    <a href="./settings.html">
+      <button id="settingsBtn" type="button" class="btn btn-primary">Settings</button>
     </a>
-    <a href="./signup.html">
-      <button id="signupBtn" type="button" class="btn btn-primary">Signup</button>
-    </a>
+    <button id="logoutBtn" type="button" class="btn btn-primary">Logout</button>
   `;
 } else {
 
+  console.log("logged out")
   html = `
     <a href="./login.html">
       <button id="loginBtn" type="button" class="btn btn-primary">Login</button>

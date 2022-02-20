@@ -32,6 +32,15 @@ lf.addEventListener("submit", async function(event) {
 
   console.log(responseData);
 
+  if (responseData.ok) {
+
+    window.location.href="./index.html";
+
+  } else {
+
+    alert("Incorrect username or password");
+  }
+
   const userData = await restFetch(...endpoints.getSelf());
 
   console.log(userData)
