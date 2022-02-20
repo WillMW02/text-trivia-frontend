@@ -61,3 +61,34 @@ async function fetchLeaderboard() {
 setTimeout(() => {
   fetchLeaderboard();
 }, 1000);
+
+let html;
+
+if (document.cookie.indexOf('cookie_name=') != -1) {
+  // cookie exists, logged in
+
+  const userData = await restFetch(...endpoints.getSelf());
+  data = userData.data;
+
+  html = `
+    Logged in as ${data.username}
+    <a href="./login.html">
+      <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
+    </a>
+    <a href="./signup.html">
+      <button id="signupBtn" type="button" class="btn btn-primary">Signup</button>
+    </a>
+  `;
+} else {
+
+  html = `
+    <a href="./login.html">
+      <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
+    </a>
+    <a href="./signup.html">
+      <button id="signupBtn" type="button" class="btn btn-primary">Signup</button>
+    </a>
+  `;
+}
+
+document.getElementById("user-state-container").innerHTML = html;
