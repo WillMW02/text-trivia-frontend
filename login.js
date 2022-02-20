@@ -32,7 +32,7 @@ lf.addEventListener("submit", async function(event) {
 
   console.log(responseData);
 
-  const userData = await restFetch("/v1/user", "GET", true, {}, {});
+  const userData = await restFetch(...endpoints.getSelf());
 
   console.log(userData)
 })
