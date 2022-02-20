@@ -64,7 +64,7 @@ setTimeout(() => {
 
 let html;
 
-if (document.cookie.indexOf('cookie_name=') != -1) {
+if (document.cookie.indexOf('jwt=') != -1) {
   // cookie exists, logged in
 
   const userData = await restFetch(...endpoints.getSelf());
