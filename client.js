@@ -2,7 +2,7 @@
   REST and fetching
 */
 const contentType = 'application/json';
-const baseApiUrl = 'https://<<<<<<<<PLACE URL HERE>>>>>>>>';
+const baseApiUrl = 'https://api.arthur.jarv.io/v1';
 
 const endpoints = {
   csrf: () => ['/csrf', 'GET', false],
@@ -33,8 +33,6 @@ async function restFetch(
 
   const opts = {
     method,
-    mode: 'same-origin',
-    credentials: 'same-origin',
     headers: {},
     body: body ? JSON.stringify(body) : undefined,
   };

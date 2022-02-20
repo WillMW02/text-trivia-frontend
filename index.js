@@ -1,5 +1,3 @@
-//const firstLoaded = Date.now();
-
 i = 0
 
 setInterval(() => {
@@ -14,35 +12,46 @@ setInterval(() => {
   document.getElementById("header").style.color = ("hsl(" + h + "," + s +"," + l + ")");
 }, 50);
 
-const data = [
-  {"name": "Arthur Jarvis", "score": "5000"},
-  {"name": "Keith", "score": "9250"}
-]
+async function fetchLeaderboard() {
 
-setTimeout(() => {
+  const responseData = await restFetch(...endpoints.getGlobalScores());
+  console.log(responseData)
 
-  html = `
-    <table class="table table-hover">
-      <thead>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Points</th>
-      </thead>
-    <tbody id="leaderboard-body">
-  `;
+  if (responseData.ok) {
 
-    for (i = 0; i < data.length; i++) {
+    data = responseData.data;
 
-      html += `
-        <tr ${i == 0 ? 'class="table-warning"' : ""}>
-          <th scope="row">${i+1}</th>
-          <td>${data[i].name}</td>
-          <td>${data[i].score}</td>
-        </tr>
-      `;
-    }
+    html = `
+      <table class="table table-hover">
+        <thead>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Points</th>
+        </thead>
+      <tbody id="leaderboard-body">
+    `;
+
+    if (data) {
+
+      for (i = 0; i < data.length; i++) {
+
+        html += `
+          <tr ${i == 0 ? 'class="table-warning"' : ""}>
+            <th scope="row">${i+1}</th>
+            <td>${data[i].username}</td>
+            <td>${data[i].total}</td>
+          </tr>
+        `;
+      }
+  }
 
   document.getElementById("leaderboard-container").innerHTML = html;
   document.getElementById("loading-container").innerHTML = "";
 
-}, 1000);
+  } else {
+
+    alert("Error")
+  }
+}
+
+fetchLeaderboard();
