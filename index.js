@@ -61,4 +61,6 @@ async function fetchLeaderboard() {
   }
 }
 
-fetchLeaderboard();
+setTimeout(() => {
+  fetchLeaderboard();
+}, 1000);
