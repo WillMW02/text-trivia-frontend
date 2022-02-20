@@ -32,7 +32,6 @@ sf.addEventListener("submit", async function(event) {
   if (responseData.ok) {
 
     alert("User created successfully")
-    window.location.href="./login.html"
 
   } else {
 
