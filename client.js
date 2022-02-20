@@ -2,18 +2,18 @@
   REST and fetching
 */
 const contentType = 'application/json';
-const baseApiUrl = 'https://api.arthur.jarv.io/v1';
+const baseApiUrl = 'https://api.arthur.jarv.io';
 
 const endpoints = {
   csrf: () => ['/csrf', 'GET', false],
-  clientLogin: () => ['/auth/login', 'POST', true],
-  clientLogout: () => ['/auth/logout', 'POST', true],
-  getGlobalScores: () => ['/score', 'GET', false],
-  getScore: (id) => [`/score/${id}`, 'GET', false],
-  getSelf: () => ['/user/me', 'GET', false],
-  getUser: () => [`/user/${id}`, 'GET', false],
-  createUser: () => ['/user/create', 'POST', true],
-  setUserPhone: () => ['/user/set-phone', 'POST', true]
+  clientLogin: () => ['/v1/auth/login', 'POST', true],
+  clientLogout: () => ['/v1/auth/logout', 'POST', true],
+  getGlobalScores: () => ['/v1/score', 'GET', false],
+  getScore: (id) => [`/v1/score/${id}`, 'GET', false],
+  getSelf: () => ['/v1/user/me', 'GET', false],
+  getUser: () => [`/v1/user/${id}`, 'GET', false],
+  createUser: () => ['/v1/user/create', 'POST', true],
+  setUserPhone: () => ['/v1/user/set-phone', 'POST', true]
 };
 
 let serverDisconnected = false;
