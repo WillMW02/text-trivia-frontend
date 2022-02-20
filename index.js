@@ -62,6 +62,14 @@ setTimeout(() => {
   fetchLeaderboard();
 }, 1000);
 
+function logOut() {
+  const cookies = document.cookie.split(";");
+  for (const cookie of cookies) {
+    const eqPos = cookie.indexOf("=");
+    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  }
+}
 
 async function fetchUserState() {
   let html;
@@ -77,7 +85,7 @@ async function fetchUserState() {
       <a href="./settings.html">
         <button id="settingsBtn" type="button" class="btn btn-primary">Settings</button>
       </a>
-      <button id="logoutBtn" type="button" class="btn btn-primary">Logout</button>
+      <button id="logoutBtn" type="button" class="btn btn-primary" onclick="logOut">Logout</button>
     `;
   } else {
 
