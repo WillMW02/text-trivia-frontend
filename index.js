@@ -66,7 +66,7 @@ function logOut() {
   const cookies = document.cookie.split(";");
   for (const cookie of cookies) {
     const eqPos = cookie.indexOf("=");
-    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    const name = eqPos > -1 ? cookie.substr(0, eqPos): cookie;
     document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
   }
 }
@@ -91,9 +91,6 @@ async function fetchUserState() {
 
     console.log("logged out")
     html = `
-      <a href="./login.html">
-        <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
-      </a>
       <a href="./signup.html">
         <button id="signupBtn" type="button" class="btn btn-primary">Signup</button>
       </a>
