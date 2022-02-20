@@ -28,7 +28,7 @@ lf.addEventListener("submit", async function(event) {
 
   console.log(username, password)
 
-  const responseData = await restFetch(...endpoints.clientLogin(), {}, { username: username, pass: password});
+  const responseData = await restFetch(...endpoints.clientLogin(), {}, { username: username, password: password});
 
   console.log(responseData);
 })
