@@ -14,3 +14,21 @@ setInterval(() => {
   document.getElementById("header").style.color = ("hsl(" + h + "," + s +"," + l + ")");
   document.getElementById("loginBtn").style.background = ("hsl(" + h + "," + s +"," + l + ")");
 }, 50);
+
+
+
+const lf = document.getElementById("login-form")
+
+lf.addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  username = document.getElementById("usernameInput").value
+  password = document.getElementById("passwordInput").value
+
+  console.log(username, password)
+
+  const responseData = await restFetch(...endpoints.clientLogin(), {}, { username: username, pass: password});
+
+  console.log(responseData);
+})

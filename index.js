@@ -50,14 +50,11 @@ async function fetchLeaderboard() {
           </tr>
         `;
       }
-  }
+    }
 
   document.getElementById("leaderboard-container").innerHTML = html;
   document.getElementById("loading-container").innerHTML = "";
 
-  } else {
-
-    alert("Error")
   }
 }
 

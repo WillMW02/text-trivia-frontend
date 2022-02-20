@@ -21,8 +21,6 @@ sf.addEventListener("submit", async function(event) {
 
   event.preventDefault();
 
-  const data = new FormData(sf);
-
   username = document.getElementById("usernameInput").value
   password = document.getElementById("passwordInput").value
   number = document.getElementById("phoneNumberInput").value

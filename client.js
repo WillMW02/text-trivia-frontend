@@ -39,6 +39,7 @@ async function restFetch(
   if (body) {
     opts.headers['Content-Type'] = contentType;
   }
+  /*
   if (setCsrfHeader) {
     let xsrf = getCookie('XSRF-TOKEN');
     if (!xsrf) {
@@ -47,7 +48,7 @@ async function restFetch(
     }
     opts.headers['CSRF-Token'] = xsrf;
   }
-
+*/
   try {
     response = await fetch(url, opts);
     if (serverDisconnected) {
@@ -65,7 +66,8 @@ async function restFetch(
     responseContentType.indexOf(contentType) === -1
       ? {}
       : await response.json();
-  if (
+  /*
+    if (
     setCsrfHeader &&
     response.status === 403 &&
     data.message &&
@@ -87,7 +89,7 @@ async function restFetch(
         ? {}
         : await response.json();
   }
-
+  */
   return { ok: response.ok, status: response.status, data };
 }
 
