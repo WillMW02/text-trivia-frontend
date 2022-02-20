@@ -11,7 +11,6 @@ setInterval(() => {
   s = "100%";
   l = "50%";
 
-<<<<<<< HEAD
   //document.getElementsByClassName("changeColor").style.color = ("hsl(" + h + "," + s +"," + l + ")");
 
   elements = document.getElementsByClassName("changeColor")
