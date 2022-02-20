@@ -11,9 +11,7 @@ setInterval(() => {
   s = "100%";
   l = "50%";
 
-  document.getElementsByClassName("header").style.color = ("hsl(" + h + "," + s +"," + l + ")");
-  document.getElementById("deleteBtn").style.background = ("hsl(" + h + "," + s +"," + l + ")");
-  document.getElementById("signupBtn").style.background = ("hsl(" + h + "," + s +"," + l + ")");
+  document.getElementById("header").style.color = ("hsl(" + h + "," + s +"," + l + ")");
 }, 50);
 
 const data = [

@@ -12,5 +12,5 @@ setInterval(() => {
   l = "50%";
 
   document.getElementById("header").style.color = ("hsl(" + h + "," + s +"," + l + ")");
-  document.getElementById("signupBtn").style.background = ("hsl(" + h + "," + s +"," + l + ")");
+  document.getElementById("loginBtn").style.background = ("hsl(" + h + "," + s +"," + l + ")");
 }, 50);
