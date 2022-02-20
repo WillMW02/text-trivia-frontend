@@ -62,32 +62,37 @@ setTimeout(() => {
   fetchLeaderboard();
 }, 1000);
 
-let html;
 
-if (document.cookie.indexOf('jwt=') != -1) {
-  console.log("cookie exists, logged in")
+async function fetchUserState() {
+  let html;
 
-  const userData = await restFetch(...endpoints.getSelf());
-  data = userData.data;
+  if (document.cookie.indexOf('jwt=') != -1) {
+    console.log("cookie exists, logged in")
 
-  html = `
-    Logged in as ${data.username}
-    <a href="./settings.html">
-      <button id="settingsBtn" type="button" class="btn btn-primary">Settings</button>
-    </a>
-    <button id="logoutBtn" type="button" class="btn btn-primary">Logout</button>
-  `;
-} else {
+    const userData = await restFetch(...endpoints.getSelf());
+    data = userData.data;
 
-  console.log("logged out")
-  html = `
-    <a href="./login.html">
-      <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
-    </a>
-    <a href="./signup.html">
-      <button id="signupBtn" type="button" class="btn btn-primary">Signup</button>
-    </a>
-  `;
+    html = `
+      Logged in as ${data.username}
+      <a href="./settings.html">
+        <button id="settingsBtn" type="button" class="btn btn-primary">Settings</button>
+      </a>
+      <button id="logoutBtn" type="button" class="btn btn-primary">Logout</button>
+    `;
+  } else {
+
+    console.log("logged out")
+    html = `
+      <a href="./login.html">
+        <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
+      </a>
+      <a href="./signup.html">
+        <button id="signupBtn" type="button" class="btn btn-primary">Signup</button>
+      </a>
+    `;
+  }
+
+  document.getElementById("user-state-container").innerHTML = html;
 }
 
-document.getElementById("user-state-container").innerHTML = html;
+fetchUserState();
